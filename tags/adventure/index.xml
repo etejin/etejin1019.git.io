@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Adventure on Little Gold Fish</title>
+    <link>https://etejin.github.io/tags/adventure/</link>
+    <description>Recent content in Adventure on Little Gold Fish</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 26 Mar 2021 00:00:00 +0000</lastBuildDate><atom:link href="https://etejin.github.io/tags/adventure/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>R Adventure Series -1</title>
+      <link>https://etejin.github.io/2021/03/26/rad_1/</link>
+      <pubDate>Fri, 26 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>https://etejin.github.io/2021/03/26/rad_1/</guid>
+      <description>Preparing pkgs # I want to use studentdata in this pkgs require(&amp;quot;LearnBayes&amp;quot;) require(&amp;quot;dplyr&amp;quot;)  Creating for loop data(studentdata) # this dataset contains the Answers to a sheet of questions given to 657 students in introductory statistics classes, however, there are some missings I will show in the adventure series 2. stu &amp;lt;- studentdata head(stu, 3) ## for loop stu_v2 &amp;lt;- stu %&amp;gt;% mutate(sleeptime = WakeUp - ToSleep) # for(i in 1:length(stu_v2$Student)) { cat(&amp;quot;\t&amp;quot;, &amp;quot;The student whose ID number is&amp;quot;, i, &amp;quot;likes to drink&amp;quot;, stu$Drink[[i]], &amp;quot;\b;\n&amp;quot;, ifelse(stu_v2$Gender[[i]] == &amp;quot;female&amp;quot;, &amp;quot;her&amp;quot;, &amp;quot;his&amp;quot;), &amp;quot;sleep time is&amp;quot;, stu_v2$sleeptime[[i]], &amp;quot;\b.</description>
+    </item>
+    
+  </channel>
+</rss>

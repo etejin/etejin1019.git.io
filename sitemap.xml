@@ -1,0 +1,66 @@
+<?xml-stylesheet type="text/xsl" href="https://etejin.github.io/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>https://etejin.github.io/about/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://etejin.github.io/tags/adventure/</loc>
+    <lastmod>2021-03-26T17:04:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://etejin.github.io/categories/</loc>
+    <lastmod>2021-03-26T17:04:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://etejin.github.io/tags/english/</loc>
+    <lastmod>2021-03-26T17:04:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://etejin.github.io/</loc>
+    <lastmod>2021-03-26T17:04:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://etejin.github.io/post/</loc>
+    <lastmod>2021-03-26T17:04:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://etejin.github.io/categories/r/</loc>
+    <lastmod>2021-03-26T17:04:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://etejin.github.io/2021/03/26/rad_1/</loc>
+    <lastmod>2021-03-26T17:04:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://etejin.github.io/tags/</loc>
+    <lastmod>2021-03-26T17:04:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+</urlset>
