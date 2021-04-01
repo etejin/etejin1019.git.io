@@ -1,0 +1,88 @@
+---
+title: R Adventure Series -1
+author: R package build
+date: '2021-03-26'
+slug: rad_1
+categories:
+  - R
+tags:
+  - English
+  - Adventure
+lastmod: '2021-03-26T17:04:38+08:00'
+keywords: []
+description: ''
+comment: no
+toc: no
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: no
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Preparing pkgs
+```{r message = FALSE}
+# I want to use studentdata in this pkgs
+require("LearnBayes") 
+require("dplyr")
+```
+
+### Creating for loop
+```{r, results = 'hide'}
+data(studentdata) 
+# this dataset contains the Answers to a sheet of questions given to 657 students in introductory statistics classes, however, there are some missings I will show in the adventure series 2.
+stu <- studentdata
+head(stu, 3)
+## for loop
+stu_v2 <- stu %>%
+  mutate(sleeptime = WakeUp - ToSleep)
+#
+for(i in 1:length(stu_v2$Student)) {
+  cat("\t", "The student whose ID number is", i, 
+      "likes to drink", stu$Drink[[i]], "\b;\n",
+      ifelse(stu_v2$Gender[[i]] == "female", "her", "his"),
+      "sleep time is", stu_v2$sleeptime[[i]], "\b.")
+  cat("\n")
+}
+```
+
+### Making dictionary
+```{r}
+is.wholenumber <-
+    function(x, 
+             tol = .Machine$double.eps^0.5)  abs(x - round(x)) < tol
+# is.wholenumer is the function to test whether the object is integer or not. It can be found in the example of is.integer(), which is not use to test the integer. 
+#
+dict <- function(x){
+  if (is.wholenumber(x) == FALSE) 
+    print("Please Enter the correct number!")
+  else{ 
+    cat("The student whose ID number is", i,
+        "likes to drink", stu_v2$Drink[[i]], "\b;\n", "while",
+        ifelse(stu_v2$Gender[[i]] == "female", "her", "his"),
+        "usual sleep time is", stu_v2$sleeptime[[i]],"\b.")}
+}
+# this dictionary has contains three information for each student in the studentdata, which are usual drink at supper time, sleeptime as well as gender.
+```
+
+### Testing the dictionary
+```{r}
+dict(23)
+dict(2.3)
+```
+
+

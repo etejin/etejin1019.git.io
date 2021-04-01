@@ -1,0 +1,87 @@
+---
+title: R Adventure Series -1
+author: R package build
+date: '2021-03-26'
+slug: rad_1
+categories:
+  - R
+tags:
+  - English
+  - Adventure
+lastmod: '2021-03-26T17:04:38+08:00'
+keywords: []
+description: ''
+comment: no
+toc: no
+autoCollapseToc: no
+postMetaInFooter: no
+hiddenFromHomePage: no
+contentCopyright: no
+reward: no
+mathjax: no
+mathjaxEnableSingleDollar: no
+mathjaxEnableAutoNumber: no
+hideHeaderAndFooter: no
+flowchartDiagrams:
+  enable: no
+  options: ''
+sequenceDiagrams:
+  enable: no
+  options: ''
+---
+
+
+<div id="TOC">
+
+</div>
+
+<div id="preparing-pkgs" class="section level3">
+<h3>Preparing pkgs</h3>
+<pre class="r"><code># I want to use studentdata in this pkgs
+require(&quot;LearnBayes&quot;) 
+require(&quot;dplyr&quot;)</code></pre>
+</div>
+<div id="creating-for-loop" class="section level3">
+<h3>Creating for loop</h3>
+<pre class="r"><code>data(studentdata) 
+# this dataset contains the Answers to a sheet of questions given to 657 students in introductory statistics classes, however, there are some missings I will show in the adventure series 2.
+stu &lt;- studentdata
+head(stu, 3)
+## for loop
+stu_v2 &lt;- stu %&gt;%
+  mutate(sleeptime = WakeUp - ToSleep)
+#
+for(i in 1:length(stu_v2$Student)) {
+  cat(&quot;\t&quot;, &quot;The student whose ID number is&quot;, i, 
+      &quot;likes to drink&quot;, stu$Drink[[i]], &quot;\b;\n&quot;,
+      ifelse(stu_v2$Gender[[i]] == &quot;female&quot;, &quot;her&quot;, &quot;his&quot;),
+      &quot;sleep time is&quot;, stu_v2$sleeptime[[i]], &quot;\b.&quot;)
+  cat(&quot;\n&quot;)
+}</code></pre>
+</div>
+<div id="making-dictionary" class="section level3">
+<h3>Making dictionary</h3>
+<pre class="r"><code>is.wholenumber &lt;-
+    function(x, 
+             tol = .Machine$double.eps^0.5)  abs(x - round(x)) &lt; tol
+# is.wholenumer is the function to test whether the object is integer or not. It can be found in the example of is.integer(), which is not use to test the integer. 
+#
+dict &lt;- function(x){
+  if (is.wholenumber(x) == FALSE) 
+    print(&quot;Please Enter the correct number!&quot;)
+  else{ 
+    cat(&quot;The student whose ID number is&quot;, i,
+        &quot;likes to drink&quot;, stu_v2$Drink[[i]], &quot;\b;\n&quot;, &quot;while&quot;,
+        ifelse(stu_v2$Gender[[i]] == &quot;female&quot;, &quot;her&quot;, &quot;his&quot;),
+        &quot;usual sleep time is&quot;, stu_v2$sleeptime[[i]],&quot;\b.&quot;)}
+}
+# this dictionary has contains three information for each student in the studentdata, which are usual drink at supper time, sleeptime as well as gender.</code></pre>
+</div>
+<div id="testing-the-dictionary" class="section level3">
+<h3>Testing the dictionary</h3>
+<pre class="r"><code>dict(23)</code></pre>
+<pre><code>## The student whose ID number is 657 likes to drink 3 ;
+##  while his usual sleep time is 8 .</code></pre>
+<pre class="r"><code>dict(2.3)</code></pre>
+<pre><code>## [1] &quot;Please Enter the correct number!&quot;</code></pre>
+</div>
